@@ -24,16 +24,19 @@ class FlutterAppGenerator {
       var repoDir = Directory('${dataDir.path}/repository');
       var servicesDir = Directory('${dataDir.path}/services');
       var modelDir = Directory('${dataDir.path}/models');
+      var dtoDir = Directory('${dataDir.path}/dto');
 
       featureDir.createSync(recursive: true);
       dataDir.createSync(recursive: true);
       repoDir.createSync(recursive: true);
       servicesDir.createSync(recursive: true);
       modelDir.createSync(recursive: true);
+      dtoDir.createSync(recursive: true);
 
       var repoDartFile = File('${repoDir.path}/${feature}_repository.dart');
       var serviceDartFile = File('${servicesDir.path}/${feature}_service.dart');
       var modelDartFile = File('${modelDir.path}/${feature}_model.dart');
+      var dtoDartFile = File('${modelDir.path}/${feature}_dto.dart');
 
       repoDartFile.createSync();
       repoDartFile.writeAsStringSync('// Repository for $feature');
@@ -43,6 +46,9 @@ class FlutterAppGenerator {
 
       modelDartFile.createSync();
       modelDartFile.writeAsStringSync('// Model for $feature');
+
+      dtoDartFile.createSync();
+      dtoDartFile.writeAsStringSync('// Model for $feature');
     }
 
     print('Added custom features to Flutter project.');
