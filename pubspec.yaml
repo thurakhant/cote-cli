@@ -1,5 +1,5 @@
 name: cote_cli
-description: A sample command-line application.
+description: A CLI tool to generate flutter projects with custom features.
 version: 1.0.0
 # repository: https://github.com/my_org/my_repo
 
@@ -14,3 +14,6 @@ dependencies:
 dev_dependencies:
   lints: ^3.0.0
   test: ^1.24.0
+
+executables:
+  cote: bin/main
